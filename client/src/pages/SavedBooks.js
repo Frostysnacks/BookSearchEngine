@@ -1,15 +1,15 @@
 import React from "react";
 import {
   Container,
-  CardColumns,
   Card,
   Button,
+  Row,
 } from "react-bootstrap";
 import { GET_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
-import { useQuery, useMutation } from "@apollo/react-hooks";
+import { useQuery, useMutation } from "@apollo/client";
 
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
@@ -59,7 +59,7 @@ const SavedBooks = () => {
               }:`
             : "You have no saved books!"}
         </h2>
-        <CardColumns>
+        <Row>
           {userData.savedBooks?.map((book) => {
             return (
               <Card key={book.bookId} border="dark">
@@ -84,7 +84,7 @@ const SavedBooks = () => {
               </Card>
             );
           })}
-        </CardColumns>
+        </Row>
       </Container>
     </>
   );
