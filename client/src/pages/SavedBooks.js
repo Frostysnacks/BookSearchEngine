@@ -46,7 +46,7 @@ const SavedBooks = () => {
 
   return (
     <>
-      <div fluid className="text-light bg-dark">
+      <div className="text-light bg-dark">
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>
